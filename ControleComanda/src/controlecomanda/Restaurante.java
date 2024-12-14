@@ -11,6 +11,7 @@ public class Restaurante {
 
     public Restaurante(String nome) {
         this.nome = nome;
+        carregaProdutos();
     }
     
     private void carregaProdutos(){
@@ -25,7 +26,7 @@ public class Restaurante {
         Scanner sc = new Scanner(System.in);
         System.out.println("Informe o nome do cliente:");
         String nomeCli = sc.nextLine();
-        sc.nextLine();
+        
         
         System.out.println("Informe o numero do cliente:");
         String numCli = sc.nextLine();
@@ -50,13 +51,26 @@ public class Restaurante {
             return false;
         } else{
             //imprimir o menu
+             for(int i = 0; i < this.menu.size();i++){
+                System.out.println((i+1)+ " - " +  this.menu.get(i));
+            }
+            
+            System.out.println("Informe o produto do pedido:");
+            int numProduto = sc.nextInt();
+            numProduto--;
+            this.mesas[numMesa].anotaPedido(this.menu.get(numProduto));
+         return true;   
         }
         
         
     }
     
-    
-    
+   public void fecharComanda(){
+       
+       
+       
+   }
+  
     
 }
 

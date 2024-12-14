@@ -19,6 +19,15 @@ public class Produto {
         this.quantVend = 0;
     }
 
+    @Override
+    public String toString() {
+        return this.nome + "\t" + this.valorUnit; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    public double getValorUnit() {
+        return valorUnit;
+    }
+
    
     
     
