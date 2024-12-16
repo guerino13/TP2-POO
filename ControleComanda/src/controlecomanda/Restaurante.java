@@ -2,6 +2,7 @@
 package controlecomanda;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Restaurante {
@@ -50,12 +51,11 @@ public class Restaurante {
         if(numMesa < 0 || numMesa > 9 || mesas[numMesa] == null){
             return false;
         } else{
+            System.out.println("Informe o produto do pedido:");
             //imprimir o menu
              for(int i = 0; i < this.menu.size();i++){
                 System.out.println((i+1)+ " - " +  this.menu.get(i));
             }
-            
-            System.out.println("Informe o produto do pedido:");
             int numProduto = sc.nextInt();
             numProduto--;
             this.mesas[numMesa].anotaPedido(this.menu.get(numProduto));
@@ -65,9 +65,17 @@ public class Restaurante {
         
     }
     
-   public void fecharComanda(){
+   public void fecharComanda(int numMesa){
        
+       Comanda c = mesas[numMesa];
+       System.out.println("Numero da mesa: "+numMesa);
+      
+       System.out.println("\nPedidos realizados: ");
+       for(Produto prod : c.getProdutos()){
+           System.out.println(prod.toString());
+       }
        
+       System.out.println("\nTotal R$: "+c.getValorTotal());
        
    }
   

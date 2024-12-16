@@ -33,6 +33,14 @@ public class Comanda {
     public double getValorTotal() {
         return valorTotal;
     }
+
+    public ArrayList<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(ArrayList<Produto> produtos) {
+        this.produtos = produtos;
+    }
     
     
     
